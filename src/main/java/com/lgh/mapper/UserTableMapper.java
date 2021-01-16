@@ -10,4 +10,6 @@ public interface UserTableMapper {
 
     List<UserTable> findAll();
     int updateBatch(List<UserTable> userTableList);
+
+    int updateByList(@Param("users") List<UserTable> userTableList);
 }
