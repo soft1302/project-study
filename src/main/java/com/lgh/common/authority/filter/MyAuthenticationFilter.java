@@ -24,6 +24,7 @@ public class MyAuthenticationFilter extends OncePerRequestFilter {
         // 获取header头信息，发起用户验证
         UserDetail userDetail = new UserDetail();
         userDetail.setId(1);
+        userDetail.setPhone("13823129999");
         userDetail.setName("test");
         List<SimpleGrantedAuthority> roles = Arrays.asList(new String[]{"ADMIN", "USER", "GUEST"})
                 .stream()
