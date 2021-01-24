@@ -1,6 +1,6 @@
 package com.lgh.common.sensitive;
 
-import com.lgh.common.utils.DesensitizationUtils;
+import com.lgh.common.util.DesensitizationUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.reflect.MethodSignature;

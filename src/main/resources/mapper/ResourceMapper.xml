@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lgh.mapper.ResourceMapper">
+    <resultMap id="BaseResultMap" type="com.lgh.model.Resource">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="resource_code" property="resourceCode" jdbcType="VARCHAR"/>
+        <result column="resource_url" property="resourceUrl" jdbcType="VARCHAR"/>
+        <result column="resource_description" property="resourceDescription" jdbcType="VARCHAR"/>
+        <result column="resource_state" property="resourceState" jdbcType="BIT"/>
+        <result column="create_time" property="createTime" jdbcType="BIGINT"/>
+        <result column="update_time" property="updateTime" jdbcType="BIGINT"/>
+    </resultMap>
+
+    <select id="selectResourceByRoleId" resultMap="BaseResultMap">
+        SELECT `tb_resource`.`id`,
+          `resource_code`,
+          `resource_url`,
+          `resource_description`,
+          `resource_state`
+         FROM  `tb_resource`
+         RIGHT  JOIN  `role_resource`
+          ON `tb_resource`.`id` = `role_resource`.`resource_id`
+         RIGHT  JOIN `user_role`
+           ON `user_role`.`role_id` = `role_resource`.`role_id`
+         WHERE `user_role`.`user_id` = #{userId}
+    </select>
+</mapper>

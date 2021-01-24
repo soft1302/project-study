@@ -1,7 +1,7 @@
 package com.lgh;
 
-import com.lgh.entity.UserTable;
-import com.lgh.mapper.UserTableMapper;
+import com.lgh.mapper.UserMapper;
+import com.lgh.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,23 +14,23 @@ import java.util.List;
 @SpringBootTest
 public class RunApplicationTest {
     @Autowired
-    private UserTableMapper userTableMapper;
+    private UserMapper userMapper;
 
     @Test
     public void testSql() {
-        List<UserTable> list = new ArrayList<>();
-        UserTable table1 = new UserTable();
-        table1.setId("1");
-        table1.setName("张三1");
-        UserTable table2 = new UserTable();
-        table2.setId("2");
-        table2.setName("张三2");
-        UserTable table3 = new UserTable();
-        table3.setId("3");
-        table3.setName("张三3");
+        List<User> list = new ArrayList<>();
+        User table1 = new User();
+        table1.setId(1);
+        table1.setUserName("张三1");
+        User table2 = new User();
+        table2.setId(2);
+        table2.setUserName("张三2");
+        User table3 = new User();
+        table3.setId(3);
+        table3.setUserName("张三3");
         list.add(table1);
         list.add(table2);
         list.add(table3);
-        userTableMapper.updateByList(list);
+        userMapper.updateByList(list);
     }
 }

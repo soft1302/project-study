@@ -19,3 +19,12 @@ logging:
     com.lgh.mapper: debug
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.lgh.model
+mapper:
+  not-empty: false
+  identity: MYSQL
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

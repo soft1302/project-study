@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <properties resource="generator/application-dev.properties"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.lgh.common.util.MyMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${spring.datasource.driver-class-name}"
+                        connectionURL="${spring.datasource.url}"
+                        userId="${spring.datasource.username}"
+                        password="${spring.datasource.password}">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.lgh.model" targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.lgh.mapper" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <!-- 数据库表 以及实体类命名 -->
+       <!-- <table schema="CL_DEMO" tableName="tb_user" domainObjectName="User"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="tb_role" domainObjectName="Role"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="tb_menu" domainObjectName="Menu"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="tb_resource" domainObjectName="Resource"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="user_role" domainObjectName="UserRole"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="role_menu" domainObjectName="RoleMenu"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="menu_resource" domainObjectName="MenuResource"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="role_resource" domainObjectName="RoleResource"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />
+        <table schema="CL_DEMO" tableName="logon" domainObjectName="Logon"
+               enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"
+               selectByExampleQueryId="false" />-->
+    </context>
+</generatorConfiguration>

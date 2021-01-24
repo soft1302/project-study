@@ -11,13 +11,14 @@ import java.nio.file.AccessDeniedException;
 public class ExceptionHandlerAspect {
 
     @ExceptionHandler(Exception.class)
-    public <T> IResult<T> exe(Exception ex) {
+    public <T> IResult<T> exe(Exception ex) throws Exception {
+        ex.printStackTrace();
         if (AccessDeniedException.class.isAssignableFrom(ex.getClass())) {
             return CommonResult.deny();
         }
         if (NoHandlerFoundException.class.isAssignableFrom(ex.getClass())) {
-            new CommonResult(404, ex.getMessage());
+            return new CommonResult(404, ex.getMessage());
         }
-        return new CommonResult(ResultEnum.UNKNOW.code, ResultEnum.UNKNOW.message);
+        throw ex;
     }
 }

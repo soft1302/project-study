@@ -1,7 +1,7 @@
 package com.lgh.common.sensitive;
 
 
-import com.lgh.common.utils.MaskUtils;
+import com.lgh.common.util.MaskUtils;
 
 import java.lang.reflect.Method;
 
