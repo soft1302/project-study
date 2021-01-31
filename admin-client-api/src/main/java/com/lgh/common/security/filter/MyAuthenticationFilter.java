@@ -26,8 +26,6 @@ import java.util.stream.Collectors;
  * spring security过滤器，不要交给spring 管理
  */
 public class MyAuthenticationFilter extends OncePerRequestFilter {
-
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         String token = request.getHeader("token");
