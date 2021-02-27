@@ -1,0 +1,12 @@
+server:
+  port: 8088
+xxl:
+  job:
+    admin:
+      address: http://localhost:8089/xxl-job-admin
+    executor:
+      appname: user-center
+      ip: 127.0.0.1
+      port: 9999
+      logpath: ./logs/xxl-job
+      logretentiondays: 30
