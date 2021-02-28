@@ -10,3 +10,26 @@ xxl:
       port: 9999
       logpath: ./logs/xxl-job
       logretentiondays: 30
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: localhost
+  metrics:
+    enabled: true
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 5000
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: '*'
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8080
+      enabled: true

@@ -20,6 +20,8 @@ public class WebMvcConfig implements WebMvcConfigurer {
                 .addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
+        registry.addResourceHandler("/hystrix/**")
+                .addResourceLocations("classpath:/static/hystrix/");
     }
     @Bean
     public Docket swaggerPersonApi10() {
